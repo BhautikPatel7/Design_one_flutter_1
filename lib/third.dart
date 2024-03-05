@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/fourth.dart';
 
 class Tutorialthird extends StatelessWidget {
   const Tutorialthird({super.key});
@@ -25,20 +27,24 @@ class Tutorialthird extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(68, 70, 84, 1),
         appBar: AppBar(
           backgroundColor: const Color.fromRGBO(68, 70, 84, 1),
-          leading: const IconButton(
+          leading:  IconButton(
             // Back Arrows Goes here
-            icon: Icon(
-              Icons.arrow_back,
-              size: 40,
-              color: Colors.white,
+            icon: InkWell(
+              child: Icon(
+                Icons.arrow_back,
+                size: 40,
+                color: Colors.white,
+              ),
             ),
             tooltip: 'Navigation menu',
-            onPressed: null,
+            onPressed:  () {
+              Navigator.pop(context);
+            },
           ),
           title: const Center(
               child: Text(
             'Essay Writer',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600,fontFamily: 'mukta',),
           )),
         ),
         // body is the majority of the screen.
@@ -78,7 +84,7 @@ class Tutorialthird extends StatelessWidget {
                           // Bottom Text
                           Text(
                             'Writing',
-                            style: t2,
+                            style: t2.copyWith(fontFamily: 'mukta',),
                           )
                         ],
                       ),
@@ -146,7 +152,7 @@ class Tutorialthird extends StatelessWidget {
                                 left: 22, right: 22, top: 10, bottom: 10),
                             child: Text(
                               '1. Create an outline for the essay',
-                              style: t5,
+                              style: t5.copyWith(fontFamily: 'mukta',),
                             ),
                           )),
                     ),
@@ -162,7 +168,7 @@ class Tutorialthird extends StatelessWidget {
                                 left: 22, right: 22, top: 10, bottom: 10),
                             child: Text(
                               '2. Find Appropriate References',
-                              style: t5,
+                              style: t5.copyWith(fontFamily: 'mukta',),
                             ),
                           )),
                     ),
@@ -178,7 +184,7 @@ class Tutorialthird extends StatelessWidget {
                                 left: 22, right: 22, top: 10, bottom: 10),
                             child: Text(
                               '3. Write an introduction',
-                              style: t5,
+                              style: t5.copyWith(fontFamily: 'mukta',),
                             ),
                           )),
                     ),
@@ -205,15 +211,13 @@ class Tutorialthird extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
                           onPressed: () {
-                            if (kDebugMode) {
-                              print('New Chat Button Pressed');
-                            }
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Tutorialfourth()));
                           },
                           label: const Row(
                             children: [
                               Text(
                                 "New Chat",
-                                style: TextStyle(fontSize: 19),
+                                style: TextStyle(fontSize: 19,fontFamily: 'mukta',fontWeight: FontWeight.bold),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 10),

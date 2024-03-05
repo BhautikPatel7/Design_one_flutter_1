@@ -7,9 +7,9 @@ class Tutorialfourth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle t = const TextStyle(
-        fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
+        fontSize: 35, fontWeight: FontWeight.bold, color: Colors.black);
     TextStyle t1 = const TextStyle(
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: FontWeight.normal,
         color: Color.fromRGBO(33, 34, 35, 1));
     // Scaffold is a layout for
@@ -34,14 +34,19 @@ class Tutorialfourth extends StatelessWidget {
               child: Column(
                 children: [
                   // Arrow And Restore text
-                  const Padding(
-                    padding: EdgeInsets.only(left: 15, top: 40, right: 15),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, top: 40, right: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(Icons.arrow_back,
-                            size: 40, color: Color.fromRGBO(27, 28, 27, 1)),
-                        Text(
+                        InkWell(
+                          child: const Icon(Icons.arrow_back,
+                              size: 40, color: Color.fromRGBO(27, 28, 27, 1)),
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                        ),
+                        const Text(
                           'Restore',
                           style: TextStyle(
                               fontSize: 18,
@@ -54,11 +59,28 @@ class Tutorialfourth extends StatelessWidget {
                   // Centred text here
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Text('Say hello to your', style: t),
+                    child: Text('Say hello to your', style: t.copyWith(fontFamily: 'Lato',fontWeight: FontWeight.bold)),
                   ),
-                  Text(
-                    'personal Al',
-                    style: t,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'personal ',
+                        style: t.copyWith(fontFamily: 'Lato',fontWeight: FontWeight.w900),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(),
+                          )
+                        ),
+                        child: Text(
+                          'AI',
+                          style: t.copyWith(fontFamily: 'Lato',fontWeight: FontWeight.w900),
+                           overflow: TextOverflow.clip,
+                        ), 
+                      ),
+                    ],
                   ),
         
                   // Light text
@@ -67,12 +89,12 @@ class Tutorialfourth extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
                     child: Text(
                       'improve productivity',
-                      style: t1,
+                      style: t1.copyWith(fontWeight: FontWeight.w400),
                     ),
                   ),
                   Text(
                     'and achieve your goals in no time',
-                    style: t1,
+                    style: t1.copyWith(fontWeight: FontWeight.w400),
                   ),
         
                   // Tick And Text
@@ -92,7 +114,7 @@ class Tutorialfourth extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 20),
                               child: Text(
                                 'Unlimited Answers',
-                                style: t1,
+                                 style: t1.copyWith(fontWeight: FontWeight.w400,fontFamily: 'Lato'),
                               ),
                             ),
                           ],
@@ -110,7 +132,7 @@ class Tutorialfourth extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 20),
                                 child: Text(
                                   'Writes long-form content',
-                                  style: t1,
+                                    style: t1.copyWith(fontWeight: FontWeight.w400,fontFamily: 'Lato'),
                                 ),
                               ),
                             ],
@@ -129,7 +151,7 @@ class Tutorialfourth extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 20),
                                 child: Text(
                                   'Faster and more accurate',
-                                  style: t1,
+                                  style: t1.copyWith(fontWeight: FontWeight.w400,fontFamily: 'Lato'),
                                 ),
                               ),
                             ],
@@ -188,10 +210,11 @@ class Tutorialfourth extends StatelessWidget {
                               const Row(
                                 children: <Widget>[
                                   Text(
-                                    '1 Year- ',
+                                    '1 Year - ',
                                     style: TextStyle(
                                         fontSize: 20,
-                                        color: Color.fromRGBO(27, 28, 27, 1)),
+                                        color: Color.fromRGBO(27, 28, 27, 1),
+                                        fontWeight: FontWeight.w500),
                                   ),
                                   Text(
                                     r'$199.99',
@@ -207,7 +230,8 @@ class Tutorialfourth extends StatelessWidget {
                                     r'$69.99',
                                     style: TextStyle(
                                         fontSize: 20,
-                                        color: Color.fromRGBO(27, 28, 27, 1)),
+                                        color: Color.fromRGBO(27, 28, 27, 1),
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ],
                               ),
@@ -275,17 +299,18 @@ class Tutorialfourth extends StatelessWidget {
                         const Icon(
                           Icons.circle_outlined,
                           size: 30,
+                          color: Color.fromARGB(255, 139, 138, 138),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: RichText(
                             text: const TextSpan(
-                              text: '1 Month- ',
-                              style:TextStyle(fontSize: 20,color: Colors.black),
+                              text: '1 Month - ',
+                              style:TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w500),
                               children: <TextSpan>[
                                 TextSpan(
                                     text: r'$19.99',
-                                    style: TextStyle(fontWeight: FontWeight.bold)),
+                                    style: TextStyle(fontWeight: FontWeight.w600)),
                               ],
                             ),
                           ),
@@ -334,17 +359,18 @@ class Tutorialfourth extends StatelessWidget {
                         const Icon(
                           Icons.circle_outlined,
                           size: 30,
+                          color: Color.fromARGB(255, 139, 138, 138),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: RichText(
                             text: const TextSpan(
-                              text: '1 Week- ',
-                              style:TextStyle(fontSize: 20,color: Colors.black),
+                              text: '1 Week - ',
+                              style:TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w500),
                               children: <TextSpan>[
                                 TextSpan(
                                     text: r'$6.99',
-                                    style: TextStyle(fontWeight: FontWeight.bold)),
+                                    style: TextStyle(fontWeight: FontWeight.w600)),
                               ],
                             ),
                           ),
@@ -382,17 +408,17 @@ class Tutorialfourth extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Container(
-                          height: 60, // Adjust the height as needed
+                          height: 75, // Adjust the height as needed
                           decoration: BoxDecoration(
                             borderRadius:
-                                BorderRadius.circular(20), // Add border radius
+                                BorderRadius.circular(30), // Add border radius
                             color: const Color.fromRGBO(253, 183, 183, 1),
                           ),
                           child: FloatingActionButton.extended(
                             foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
                             backgroundColor: const Color.fromRGBO(75, 154, 247, 1),
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(30)),
                             onPressed: () {
                               if (kDebugMode) {
                                 print('Try It Button Pressed');
@@ -402,7 +428,7 @@ class Tutorialfourth extends StatelessWidget {
                               children: [
                                 Text(
                                   "Try it Free",
-                                  style: TextStyle(fontSize: 19),
+                                  style: TextStyle(fontSize: 19,fontFamily: 'Lato',fontWeight: FontWeight.w900),
                                 ),
                               
                               ],
@@ -426,7 +452,7 @@ class Tutorialfourth extends StatelessWidget {
             child: Column(
               children: [
                 Text(r'3 days free, then $69.99/year',style: TextStyle(fontSize: 20),),
-                 Text('cancel anytime',style: TextStyle(fontSize: 20),)
+                 Text('cancel anytime',style: TextStyle(fontSize: 20,fontFamily: 'Mukta',fontWeight: FontWeight.w300),)
               ],
             ),
           ),
@@ -438,8 +464,6 @@ class Tutorialfourth extends StatelessWidget {
               ],
             ),
           ),
-         
-          
           ],
         ),
       ),

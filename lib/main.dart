@@ -4,18 +4,17 @@ import 'package:flutter_application_1/fourth.dart';
 import 'package:flutter_application_1/pratice.dart';
 import 'package:flutter_application_1/second.dart';
 
-
 void main() {
   runApp(
     const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Tutorial',
-      // Run Custom Screen From Here
-      // home:TutorialHome() //-- Home Screen Run Here
-      // home: Tutorialsecond(), //-- Second Screen Run Here
-      // home: Tutorialthird(), //-- Third Screen Run here
-      home: Tutorialsecond(),//--fourth Screen Run here
-    ),
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Tutorial',
+        // Run Custom Screen From Here
+        home: TutorialHome() //-- Home Screen Run Here
+        //  home: Tutorialsecond(), //-- Second Screen Run Here
+        // home: Tutorialthird(), //-- Third Screen Run here
+        // home:BounceAnimationDemo(),//--fourth Screen Run here
+        ),
   );
 }
 
@@ -30,9 +29,6 @@ class TutorialHome extends StatelessWidget {
     // Scaffold is a layout for
     // the major Material Components.
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Designs'),
-      ),
       // body is the majority of the screen.
       body: SingleChildScrollView(
         child: Column(
@@ -42,21 +38,24 @@ class TutorialHome extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  Text(
-                    'SIGN IN',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      color: c.withOpacity(0.7),
-                      height: 2.5,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 65),
+                    child: Text(
+                      'SIGN IN',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                        color: c.withOpacity(0.7),
+                        height: 2.5,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 20.0), // Adjust the left padding
+              padding:
+                  const EdgeInsets.only(left: 20.0), // Adjust the left padding
               child: Text(
                 'Create and Account',
                 style: TextStyle(
@@ -69,12 +68,13 @@ class TutorialHome extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 20.0, top: 5), // Adjust the left padding 
+                  left: 20.0, top: 4), // Adjust the left padding
               child: Text(
-                'Enter email adress to create an account!',
+                'Enter email address to create an account!',
                 style: TextStyle(
+                  fontFamily: 'Mukta',
                   color: c.withOpacity(0.7),
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                   fontSize: 23,
                 ),
               ),
@@ -84,8 +84,24 @@ class TutorialHome extends StatelessWidget {
                   top: 35, left: 20, right: 20, bottom: 5),
               child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: const Color.fromARGB(255, 255, 255, 255)),
+                  borderRadius: BorderRadius.circular(5),
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  boxShadow: const <BoxShadow>[
+                    BoxShadow(
+                        color: Color.fromARGB(39, 0, 0, 0),
+                        offset: Offset(0, 8), // hide shadow top
+                        blurRadius: 10,
+                        spreadRadius: 0.1,),
+                    BoxShadow(
+                      color: Colors.white, // replace with color of container
+                      offset: Offset(-8, 0), // hide shadow right
+                    ),
+                    BoxShadow(
+                      color: Colors.white, // replace with color of container
+                      offset: Offset(8, 0), // hide shadow left
+                    ),
+                  ],
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -135,7 +151,8 @@ class TutorialHome extends StatelessWidget {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       labelStyle: const TextStyle(
-                          fontSize: 22,
+                          fontSize: 20,
+                          fontFamily: 'Mukta',
                           color: Color.fromRGBO(118, 118, 121, 1)),
                       focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
@@ -176,7 +193,8 @@ class TutorialHome extends StatelessWidget {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       labelStyle: const TextStyle(
-                          fontSize: 22,
+                          fontSize: 20,
+                          fontFamily: 'Mukta',
                           color: Color.fromRGBO(118, 118, 121, 1)),
                       focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
@@ -217,7 +235,8 @@ class TutorialHome extends StatelessWidget {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       labelStyle: const TextStyle(
-                          fontSize: 22,
+                          fontSize: 20,
+                          fontFamily: 'Mukta',
                           color: Color.fromRGBO(118, 118, 121, 1)),
                       focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
@@ -248,12 +267,14 @@ class TutorialHome extends StatelessWidget {
                       ),
                       child: FloatingActionButton.extended(
                         foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
-                        backgroundColor:  const Color.fromRGBO(253, 183, 183, 1),
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius. circular(10)),
+                        backgroundColor: const Color.fromRGBO(253, 183, 183, 1),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
                         onPressed: () {
-                          if (kDebugMode) {
-                            print('Sign In Button Pressed');
-                          }
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Tutorialsecond()));
                         },
                         label: const Text(
                           "Sign In",

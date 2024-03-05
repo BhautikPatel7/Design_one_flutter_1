@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/third.dart';
 
 class Tutorialsecond extends StatelessWidget {
   const Tutorialsecond({super.key});
@@ -11,7 +12,7 @@ class Tutorialsecond extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
 
     TextStyle t1 = const TextStyle(
-        fontSize: 16, color: Colors.white, fontWeight: FontWeight.w500);
+        fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400);
     return Scaffold(
         backgroundColor: const Color.fromRGBO(68, 70, 84, 1),
         body: SingleChildScrollView(
@@ -49,12 +50,18 @@ class Tutorialsecond extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Padding(
-                                padding: EdgeInsets.only(left: 20, top: 35),
-                                child: Icon(
-                                  Icons.arrow_back,
-                                  color: Colors.white,
-                                  size: 40,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20, top: 35),
+                                child: InkWell(
+                                  child: const Icon(
+                                    Icons.arrow_back,
+                                    color: Colors.white,
+                                    size: 40,
+                                  ),
+                                  onTap: () {
+                                     Navigator.pop(context);
+
+                                  },
                                 ),
                               ),
                               Row(
@@ -68,10 +75,11 @@ class Tutorialsecond extends StatelessWidget {
                                         child: Text(
                                           'Verify Your ',
                                           style: TextStyle(
+                                            
                                             color: Colors.white,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w700,
-                                            fontFamily: 'Montserrat',
+                                            fontFamily: 'mukta',
                                           ),
                                         ),
                                       ),
@@ -83,6 +91,7 @@ class Tutorialsecond extends StatelessWidget {
                                             color: Colors.white,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w700,
+                                            fontFamily: 'Mukta'
                                           ),
                                         ),
                                       ),
@@ -118,8 +127,12 @@ class Tutorialsecond extends StatelessWidget {
                           left: 0,
                           right: 0,
                           child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                               color: const Color.fromRGBO(8, 154, 255, 1),
+                            ),
                             height: 5,
-                            color: const Color.fromRGBO(8, 154, 255, 1),
+                            
                           ),
                         ),
                       ],
@@ -145,7 +158,7 @@ class Tutorialsecond extends StatelessWidget {
                           TextSpan(
                               text: 'youremail@mail.com',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18)),
+                                  fontWeight: FontWeight.w500, fontSize: 18)),
                         ],
                       ),
                     )
@@ -279,14 +292,19 @@ class Tutorialsecond extends StatelessWidget {
                                 print('Continue');
                               }
                             },
-                            label: const Row(
-                              children: [
-                                Text(
-                                  "Continue",
-                                  style: TextStyle(fontSize: 19),
-                                ),
-                              
-                              ],
+                            label:  InkWell(
+                              child: const Row(
+                                children: [
+                                  Text(
+                                    "Continue",
+                                    style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
+                                  ),
+                                
+                                ],
+                              ),
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => Tutorialthird()));
+                              },
                             ),
                           ),
                         ),
@@ -295,10 +313,10 @@ class Tutorialsecond extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(bottom: 12),
+                  padding: EdgeInsets.only(bottom: 25,top: 10),
                   child: Text('Resend Code',style: TextStyle(
                                     color: Color.fromRGBO(75, 154, 247, 1),
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w500
                                   ),),
                 ),
