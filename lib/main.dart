@@ -1,19 +1,21 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/TabsOfDesign.dart';
 import 'package:flutter_application_1/fourth.dart';
 import 'package:flutter_application_1/pratice.dart';
 import 'package:flutter_application_1/second.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+     MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Tutorial',
         // Run Custom Screen From Here
-        home: TutorialHome() //-- Home Screen Run Here
+        //home: TutorialHome() //-- Home Screen Run Here
         //  home: Tutorialsecond(), //-- Second Screen Run Here
         // home: Tutorialthird(), //-- Third Screen Run here
         // home:BounceAnimationDemo(),//--fourth Screen Run here
+        home: TabsOfdesign()
         ),
   );
 }
