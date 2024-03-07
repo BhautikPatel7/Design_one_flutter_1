@@ -30,6 +30,7 @@ class TabsOfdesign extends StatelessWidget {
 }
 
 class BottomnavigationBar extends StatefulWidget {
+ 
   const BottomnavigationBar({super.key});
 
   @override
@@ -37,43 +38,31 @@ class BottomnavigationBar extends StatefulWidget {
 }
 
 class _BottomnavigationBar extends State<BottomnavigationBar> {
-  @override
-  Widget build(BuildContext context) {
-    // if (kIsWeb) {
-    //   print('its web');
-    // }
-    if (Platform.isAndroid) {
-      print('Its Android');
-
-      return SafeArea(
-        //Implimenting safe Area
-        bottom: true,
-        minimum:
-            EdgeInsets.only(bottom: 0), //You Can Adjust Your Safe Area Here
-        child: TabBar(
-          tabs: [
+   TabBar t = TabBar(tabs: [
             Tabbs(Icons.login_rounded, 'sign in'),
             Tabbs(Icons.verified_rounded, 'verify'),
             Tabbs(Icons.question_answer, 'Chat'),
             Tabbs(Icons.subscriptions, 'Subscribe'),
-          ],
-        ),
-      );
+          ],);
+  @override
+  Widget build(BuildContext context) {
+    if (kIsWeb) {
+      print('its web');
+       return t;
+    }
+    if (Platform.isAndroid) {
+      // print('Its Android');
+
+      return t;
+      
     } else {
       return SafeArea(
         //Implimenting safe Area
         bottom: true,
         minimum:
             EdgeInsets.only(bottom: 20), //You Can Adjust Your Safe Area Here
-        child: TabBar(
-          tabs: [
-            Tabbs(Icons.login_rounded, 'sign in'),
-            Tabbs(Icons.verified_rounded, 'verify'),
-            Tabbs(Icons.question_answer, 'Chat'),
-            Tabbs(Icons.subscriptions, 'Subscribe'),
-          ],
-        ),
-      );
+        child: t,
+        );
     }
   }
 }
